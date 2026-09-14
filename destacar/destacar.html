@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destacar</title>
+</head>
+<body>
+    <h1>Destacar</h1>
+    
+    <h2>Digite um nome para destacar:</h2>
+    <input type="text" id="campoBusca" placeholder="Digite o nome idêntico..." />
+    <h3>Lista de nomes:</h3>
+    <ol>
+        <li>João</li>
+        <li>Márcio</li>
+        <li>Fabiana</li>
+        <li>Jorge</li>
+        <li>Silvana</li>
+        <li>Luiz</li>
+        <li>Carlos</li>
+        <li>Pablo</li>
+    </ol>
+
+    <script>
+        var busca = document.getElementById("campoBusca");
+        var nomes = document.getElementsByTagName("li");
+
+        busca.oninput = () => {
+            for (var i = 0; i < nomes.length; i++) {
+                var nome = nomes[i];
+                if (nome.textContent === busca.value) {
+                    nome.style.color = "red";
+                    nome.style.fontWeight = "bold";
+                } else {
+                    nome.style.color = "black";
+                    nome.style.fontWeight = "normal";
+                }
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Multas</title>
+  </head>
+
+  <body>
+    <h1>Sistema de Multas</h1>
+
+    <p>Velocidade do carro:</p>
+    <input type="text" id="velocidade" value="" /> km/h
+    <input type="submit" onclick="verificar()" value="Verificar" />
+
+    <p id="resultado"></p>
+
+    <script>
+      function verificar() {
+        var velocidade = document.getElementById("velocidade").value;
+
+        var mensagem =
+          "Sua velocidade atual é de <b>" + velocidade + "</b> km/h. <br>";
+
+        if (velocidade >= 100) {
+          mensagem += "Velocidade acima do permitido! <b>MULTADO.</b>";
+        } else {
+          mensagem += "Velocidade dentro do permitido.";
+        }
+
+        document.getElementById("resultado").innerHTML = mensagem;
+      }
+    </script>
+  </body>
+</html>

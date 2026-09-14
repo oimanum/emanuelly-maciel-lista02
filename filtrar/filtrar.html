@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filtrar</title>
+  </head>
+  <body>
+    <h1>Filtrar</h1>
+
+    <h2>Digite um nome para filtrar:</h2>
+    <input type="text" id="busca" placeholder="Digite o nome..." oninput="filtrarNomes()"/>
+    <h3>Lista de nomes:</h3>
+    <ul>
+      <li>João</li>
+      <li>Márcio</li>
+      <li>Fabiana</li>
+      <li>Jorge</li>
+      <li>Silvana</li>
+      <li>Luiz</li>
+      <li>Carlos</li>
+      <li>Pablo</li>
+    </ul>
+
+    <script>
+      function filtrarNomes() {
+        var inputBusca = document.getElementById("busca")
+        var itensLista = document.getElementsByTagName("li");
+
+        var textoDigitado = inputBusca.value.toLowerCase();
+
+        for (var i = 0; i < itensLista.length; i++) {
+          var nome = itensLista[i].textContent.toLowerCase();
+          if (nome.includes(textoDigitado)) {
+            itensLista[i].style.display = "";
+          } else {
+            itensLista[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
