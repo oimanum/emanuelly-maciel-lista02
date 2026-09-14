@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mudar Tema</title>
+    <style>
+       #caixa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+       }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="caixa">
+        <h1 id="textoCor">Modo Claro/Escuro</h1>
+
+        <button id="tema" onclick="mudarTema()">Mudar Tema</button>
+    </div>
+      
+    
+    <script>
+      let fundoPreto = false;
+      function mudarTema() {
+        if ((fundoPreto = !fundoPreto)) {
+          // Se fundoPreto for false, muda para true, se for true, muda para false
+          document.body.style.backgroundColor = "black";
+          document.getElementById("textoCor").style.color = "white";
+        } else {
+          document.body.style.backgroundColor = "white";
+          document.getElementById("textoCor").style.color = "black";
+        }
+      }
+    </script>
+  </body>
+</html>

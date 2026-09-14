@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirme sua Presença</title>
+</head>
+<body>
+    
+    
+    <h1>Lista de Nomes:</h1>
+    <ul id="listaNomes">
+        <li>
+            <input type="checkbox" id="nome1"/>
+            João
+        </li>
+        <li>
+            <input type="checkbox" id="nome2"/>
+            Márcio
+        </li>
+        <li>
+            <input type="checkbox" id="nome3"/>
+            Fabiana
+        </li>
+        <li>
+            <input type="checkbox" id="nome4"/>
+            Jorge
+        </li>
+        <li>
+            <input type="checkbox" id="nome5"/>
+            Silvana
+        </li>
+        <li>
+            <input type="checkbox" id="nome6"/>
+            Luiz
+        </li>
+        <li>
+            <input type="checkbox" id="nome7"/>
+            Carlos
+        </li>
+        <li>
+            <input type="checkbox" id="nome8"/>
+            Pablo
+        </li>
+    </ul>
+
+
+    <input type="button" id="confirmarPresenca" onclick="confirmarPresenca()" value="Confirmar Presença" />
+
+    <p id="resultado"></p>
+    
+
+    <script>
+        function confirmarPresenca() {
+            var listaNomes = document.getElementById("listaNomes");
+            var checkboxes = listaNomes.getElementsByTagName("input");
+            var nomesConfirmados = [];
+            var nomesAusentes = [];
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    var nome = checkboxes[i].parentNode.textContent.trim();
+                    nomesConfirmados.push(nome);
+                }
+            }
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (!checkboxes[i].checked) {
+                    var nome = checkboxes[i].parentNode.textContent.trim();
+                    nomesAusentes.push(nome);
+                }
+            }
+
+            if (nomesConfirmados.length > 0) {
+                document.getElementById("resultado").innerHTML =
+                    'Presentes: <span style="color: green;">' + nomesConfirmados.join(", ") +
+                    '</span><br>Ausentes: <span style="color: red;">' + nomesAusentes.join(", ") + '</span>';
+                    
+            } else {
+                document.getElementById("resultado").innerHTML = "Nenhum nome selecionado.";
+            }
+        }
+    </script>
+</body>
+</html>

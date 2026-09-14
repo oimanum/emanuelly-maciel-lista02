@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conta Cliques</title>
+  </head>
+
+  <body>
+    <h1>Contador de Cliques</h1>
+
+    <button onclick="contarClique()">Aperte aqui</button>
+    <button onclick="zerarClique() ">Zerar Contador</button>
+
+    <p>Cliques: <span id="contador">0</span></p>
+
+    <p id="resultado"></p>
+
+    <script>
+      let cliques = 0;
+        function contarClique() {
+            cliques++;
+            document.getElementById('contador').textContent = cliques;  
+          }
+        function zerarClique() {
+            document.getElementById('contador').textContent = cliques = 0;
+        }
+    </script>
+  </body>
+</html>
