@@ -1,144 +1,143 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verificador de Idade</title>
-    
+
     <style>
         body {
-    background-color: #608d6b;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding-top: 40px;
-}
+            background-color: #608d6b;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 40px;
+        }
 
-#caixa {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 50;
-}
+        #caixa {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 50;
+        }
 
-h1 {
-    color: #F8F0E3;
-    margin-bottom: 20px;
-}
+        h1 {
+            color: #F8F0E3;
+            margin-bottom: 20px;
+        }
 
-footer {
-    color: #F8F0E3;
-    font-style: italic;
-    margin-top: 20px;
-}
+        footer {
+            color: #F8F0E3;
+            font-style: italic;
+            margin-top: 20px;
+        }
 
-main {
-    background-color: #F8F0E3;
-    border-radius: 10px;
-    padding: 30px;
-    width: 450px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    
-}
+        main {
+            background-color: #F8F0E3;
+            border-radius: 10px;
+            padding: 30px;
+            width: 450px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
 
-
-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        }
 
 
-
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
     </style>
 
-  </head>
+</head>
 
-  <body class="caixa-codigo">
+<body class="caixa-codigo">
     <div id="caixa">
-        <h1 >Verificador de Idade</h1>
+        <h1>Verificador de Idade</h1>
 
         <main>
-        <span>Ano de Nascimento:</span>
-        <input type="number" id="anoNascimento" value="" />
-        <span> <br>Sexo: </span>
-        <input type="radio" name="sexo" value="masculino" id="masculino" /> Masculino
-        <input type="radio" name="sexo" value="feminino" id="feminino" /> Feminino
-        <br>
-        <button onclick="verificarIdade()" id="botaoVerificar">Verificar</button>
-        <p id="resultado"></p>
-    </div>   
-    
+            <span>Ano de Nascimento:</span>
+            <input type="number" id="anoNascimento" value="" />
+            <span> <br>Sexo: </span>
+            <input type="radio" name="sexo" value="masculino" id="masculino" /> Masculino
+            <input type="radio" name="sexo" value="feminino" id="feminino" /> Feminino
+            <br>
+            <button onclick="verificarIdade()" id="botaoVerificar">Verificar</button>
+            <p id="resultado"></p>
+    </div>
+
     <script>
-      function verificarIdade() {
-        var anoNascimento = document.getElementById("anoNascimento").value;
-        var idade = new Date().getFullYear() - anoNascimento;
-        var masculino = document.getElementById("masculino");
-        var feminino = document.getElementById("feminino");
-        var resultado = document.getElementById("resultado");
-       
+        function verificarIdade() {
+            var anoNascimento = document.getElementById("anoNascimento").value;
+            var idade = new Date().getFullYear() - anoNascimento;
+            var masculino = document.getElementById("masculino");
+            var feminino = document.getElementById("feminino");
+            var resultado = document.getElementById("resultado");
 
 
-        if (masculino.checked) {
-            resultado.innerText = ``;
-            
-            if (idade < 0) {
+
+            if (masculino.checked) {
                 resultado.innerText = ``;
-                resultado.innerText += `Idade inválida.`;
-            } else if (idade > 0 && idade <=2) {
-                resultado.innerText += `Detectamos um bebê com ${idade} ano(s).`;
-                resultado.innerHTML += `<br><img src="bebehomem.jpg" alt="bebeHomem" width="200">`;
-            } else if (idade > 2 && idade <= 12) {
-                resultado.innerText += `Detectamos uma criança com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="criancahomem.jpg" alt="criancaHomem" width="200">`;
-            } else if (idade > 12 && idade <= 17) {
-                resultado.innerText += `Detectamos um adolescente com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="adolescentehomem.jpg" alt="adolescenteHomem" width="200">`;
-            } else if (idade > 17 && idade <= 59) {
-                resultado.innerText += `Detectamos um homem com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="adultohomem.jpg" alt="adultoHomem" width="200">`;
-            } else if (idade >= 60) {
-                resultado.innerText += `Detectamos um homem com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="idosohomem.jpg" alt="idosoHomem" width="200">`;
-            }
-        } else if (feminino.checked) {
-            resultado.innerText = ``;
-            if (idade < 0) {
+
+                if (idade < 0) {
+                    resultado.innerText = ``;
+                    resultado.innerText += `Idade inválida.`;
+                } else if (idade > 0 && idade <= 2) {
+                    resultado.innerText += `Detectamos um bebê com ${idade} ano(s).`;
+                    resultado.innerHTML += `<br><img src="bebehomem.jpg" alt="bebeHomem" width="200">`;
+                } else if (idade > 2 && idade <= 12) {
+                    resultado.innerText += `Detectamos uma criança com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="criancahomem.jpg" alt="criancaHomem" width="200">`;
+                } else if (idade > 12 && idade <= 17) {
+                    resultado.innerText += `Detectamos um adolescente com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="adolescentehomem.jpg" alt="adolescenteHomem" width="200">`;
+                } else if (idade > 17 && idade <= 59) {
+                    resultado.innerText += `Detectamos um homem com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="adultohomem.jpg" alt="adultoHomem" width="200">`;
+                } else if (idade >= 60) {
+                    resultado.innerText += `Detectamos um homem com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="idosohomem.jpg" alt="idosoHomem" width="200">`;
+                }
+            } else if (feminino.checked) {
                 resultado.innerText = ``;
-                resultado.innerText += `Idade inválida.`;
-            } else if (idade > 0 && idade <=2) {
-                resultado.innerText += `Detectamos uma bebê com ${idade} ano(s).`;
-                resultado.innerHTML += `<br><img src="bebemulher.jpg" alt="bebeMulher" width="200">`;
-            } else if (idade > 2 && idade <= 12) {
-                resultado.innerText += `Detectamos uma criança com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="criancamulher.jpg" alt="criancaMulher" width="200">`;
-            } else if (idade > 12 && idade <= 17) {
-                resultado.innerText += `Detectamos uma adolescente com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="adolescentemulher.jpg" alt="adolescenteMulher" width="200">`;
-            } else if (idade > 17 && idade <= 59) {
-                resultado.innerText += `Detectamos uma mulher com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="adultomulher.jpg" alt="adultoMulher" width="200">`;
-            } else if (idade >= 60) {
-                resultado.innerText += `Detectamos uma mulher com ${idade} anos.`;
-                resultado.innerHTML += `<br><img src="idosomulher.jpg" alt="idosoMulher" width="200">`;
+                if (idade < 0) {
+                    resultado.innerText = ``;
+                    resultado.innerText += `Idade inválida.`;
+                } else if (idade > 0 && idade <= 2) {
+                    resultado.innerText += `Detectamos uma bebê com ${idade} ano(s).`;
+                    resultado.innerHTML += `<br><img src="bebemulher.jpg" alt="bebeMulher" width="200">`;
+                } else if (idade > 2 && idade <= 12) {
+                    resultado.innerText += `Detectamos uma criança com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="criancamulher.jpg" alt="criancaMulher" width="200">`;
+                } else if (idade > 12 && idade <= 17) {
+                    resultado.innerText += `Detectamos uma adolescente com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="adolescentemulher.jpg" alt="adolescenteMulher" width="200">`;
+                } else if (idade > 17 && idade <= 59) {
+                    resultado.innerText += `Detectamos uma mulher com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="adultomulher.jpg" alt="adultoMulher" width="200">`;
+                } else if (idade >= 60) {
+                    resultado.innerText += `Detectamos uma mulher com ${idade} anos.`;
+                    resultado.innerHTML += `<br><img src="idosomulher.jpg" alt="idosoMulher" width="200">`;
+                }
+            } else {
+                resultado.innerText = ``;
+                resultado.innerText += 'Sexo: Não selecionado';
             }
-        } else {
-            resultado.innerText = ``;
-            resultado.innerText += 'Sexo: Não selecionado';
-            }
-      }
+        }
     </script>
-    
+
     </main>
 
 
-     <footer>
+    <footer>
         <p>&copy; Emanuelly Maciel</p>
     </footer>
 
-  </body>
+</body>
+
 </html>

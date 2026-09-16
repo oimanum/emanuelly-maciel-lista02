@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destacar</title>
+    <style>
+        body {
+            background-color: #608d6b;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 40px;
+        }
+
+        #caixa {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 50;
+        }
+
+        h1 {
+            color: #F8F0E3;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            color: #F8F0E3;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        main {
+            background-color: #F8F0E3;
+            border-radius: 10px;
+            padding: 30px;
+            width: 450px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Destacar</h1>
-    
-    <h2>Digite um nome para destacar:</h2>
-    <input type="text" id="campoBusca" placeholder="Digite o nome idêntico..." />
-    <h3>Lista de nomes:</h3>
-    <ol>
-        <li>João</li>
-        <li>Márcio</li>
-        <li>Fabiana</li>
-        <li>Jorge</li>
-        <li>Silvana</li>
-        <li>Luiz</li>
-        <li>Carlos</li>
-        <li>Pablo</li>
-    </ol>
+    <div id="caixa">
+        <h1>Destacar</h1>
+        <main>
+            <h2>Digite um nome para destacar:</h2>
+            <input type="text" id="campoBusca" placeholder="Digite o nome idêntico..." />
+            <h3>Lista de nomes:</h3>
+            <ol>
+                <li>João</li>
+                <li>Márcio</li>
+                <li>Fabiana</li>
+                <li>Jorge</li>
+                <li>Silvana</li>
+                <li>Luiz</li>
+                <li>Carlos</li>
+                <li>Pablo</li>
+            </ol>
+    </div>
 
     <script>
         var busca = document.getElementById("campoBusca");
@@ -39,5 +82,11 @@
             }
         };
     </script>
+    </main>
+
+    <footer>
+        <p>&copy; Emanuelly Maciel</p>
+    </footer>
 </body>
+
 </html>

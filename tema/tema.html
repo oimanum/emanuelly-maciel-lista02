@@ -1,42 +1,61 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mudar Tema</title>
-    <style>
-       #caixa {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-       }
-    </style>
 
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mudar Tema</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-  <body>
-    <div id="caixa">
-        <h1 id="textoCor">Modo Claro/Escuro</h1>
+    #caixa {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-        <button id="tema" onclick="mudarTema()">Mudar Tema</button>
-    </div>
-      
-    
-    <script>
-      let fundoPreto = false;
-      var textoCor = document.getElementById("textoCor");
 
-      function mudarTema() {
-        if ((fundoPreto = !fundoPreto)) {
-          // Se fundoPreto for false, muda para true, se for true, muda para false
-          document.body.style.backgroundColor = "black";
-          textoCor.style.color = "white";
-        } else {
-          document.body.style.backgroundColor = "white";
-          textoCor.style.color = "black";
-        }
+    footer {
+      display: flex;
+      justify-content: center;
+      color: pink;
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="caixa">
+    <h1 id="textoCor">Modo Claro/Escuro </h1>
+    <button id="tema" onclick="mudarTema()">Mudar Tema</button>
+    <footer>
+      <p>&copy; Emanuelly Maciel</p>
+    </footer>
+  </div>
+
+
+  <script>
+    let fundoPreto = false;
+    var textoCor = document.getElementById("textoCor");
+
+    function mudarTema() {
+      if ((fundoPreto = !fundoPreto)) {
+        // Se fundoPreto for false, muda para true, se for true, muda para false
+        document.body.style.backgroundColor = "black";
+        textoCor.style.color = "white";
+      } else {
+        document.body.style.backgroundColor = "white";
+        textoCor.style.color = "black";
       }
-    </script>
-  </body>
+    }
+  </script>
+
+
+</body>
+
 </html>
