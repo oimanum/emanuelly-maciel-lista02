@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+  <body class="caixa-codigo">
+    <div id="caixa">
+        <h1 >Verificador de Idade</h1>
+
+        <main>
+        <span>Ano de Nascimento:</span>
+        <input type="number" id="anoNascimento" value="" />
+        <span> <br>Sexo: </span>
+        <input type="radio" name="sexo" value="masculino" id="masculino" /> Masculino
+        <input type="radio" name="sexo" value="feminino" id="feminino" /> Feminino
+        <br>
+        <button onclick="verificarIdade()" id="botaoVerificar">Verificar</button>
+        <p id="resultado"></p>
+    </div>   
+    
+    <script>
+      function verificarIdade() {
+        var anoNascimento = document.getElementById("anoNascimento").value;
+        var idade = new Date().getFullYear() - anoNascimento;
+        var masculino = document.getElementById("masculino");
+        var feminino = document.getElementById("feminino");
+        var resultado = document.getElementById("resultado");
+       
+
+
+        if (masculino.checked) {
+            document.getElementById("resultado").innerText = ``;
+            
+            if (idade < 0) {
+                document.getElementById("resultado").innerText = ``;
+                document.getElementById("resultado").innerText += `Idade inválida.`;
+            } else if (idade > 0 && idade <=2) {
+                document.getElementById("resultado").innerText += `Detectamos um bebê com ${idade} ano(s).`;
+                document.getElementById("resultado").innerHTML += `<br><img src="bebehomem.jpg" alt="bebeHomem" width="200">`;
+            } else if (idade > 2 && idade <= 12) {
+                document.getElementById("resultado").innerText += `Detectamos uma criança com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="criancahomem.jpg" alt="criancaHomem" width="200">`;
+            } else if (idade > 12 && idade <= 17) {
+                document.getElementById("resultado").innerText += `Detectamos um adolescente com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="adolescentehomem.jpg" alt="adolescenteHomem" width="200">`;
+            } else if (idade > 17 && idade <= 59) {
+                document.getElementById("resultado").innerText += `Detectamos um homem com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="adultohomem.jpg" alt="adultoHomem" width="200">`;
+            } else if (idade >= 60) {
+                document.getElementById("resultado").innerText += `Detectamos um homem com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="idosohomem.jpg" alt="idosoHomem" width="200">`;
+            }
+        } else if (feminino.checked) {
+            document.getElementById("resultado").innerText = ``;
+            if (idade < 0) {
+                document.getElementById("resultado").innerText = ``;
+                document.getElementById("resultado").innerText += `Idade inválida.`;
+            } else if (idade > 0 && idade <=2) {
+                document.getElementById("resultado").innerText += `Detectamos uma bebê com ${idade} ano(s).`;
+                document.getElementById("resultado").innerHTML += `<br><img src="bebemulher.jpg" alt="bebeMulher" width="200">`;
+            } else if (idade > 2 && idade <= 12) {
+                document.getElementById("resultado").innerText += `Detectamos uma criança com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="criancamulher.jpg" alt="criancaMulher" width="200">`;
+            } else if (idade > 12 && idade <= 17) {
+                document.getElementById("resultado").innerText += `Detectamos uma adolescente com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="adolescentemulher.jpg" alt="adolescenteMulher" width="200">`;
+            } else if (idade > 17 && idade <= 59) {
+                document.getElementById("resultado").innerText += `Detectamos uma mulher com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="adultomulher.jpg" alt="adultoMulher" width="200">`;
+            } else if (idade >= 60) {
+                document.getElementById("resultado").innerText += `Detectamos uma mulher com ${idade} anos.`;
+                document.getElementById("resultado").innerHTML += `<br><img src="idosomulher.jpg" alt="idosoMulher" width="200">`;
+            }
+        } else {
+            document.getElementById("resultado").innerText = ``;
+            document.getElementById("resultado").innerText += 'Sexo: Não selecionado';
+            }
+      }
+    </script>
+    
+    </main>
+
+
+     <footer>
+        <p>&copy; Uniderp</p>
+    </footer>
+
+  </body>
+</html>
