@@ -7,7 +7,6 @@
   </head>
   <body>
     <h1>Tabuada</h1>
-
     <p>Digite um número:</p>
     <input type="number" id="numero" value="" />
     <input type="submit" onclick="gerarTabuada()" value="Gerar Tabuada" />
@@ -17,8 +16,7 @@
     <script>
       function gerarTabuada() {
         var numero = document.getElementById("numero").value;
-
-        var mensagem = "Tabuada do <b>" + numero + "</b>: <br>";
+        var mensagem = "Tabuada do " + numero + ": <br>";
 
         for (var i = 1; i <= 10; i++) {
           var resultado = numero * i;
