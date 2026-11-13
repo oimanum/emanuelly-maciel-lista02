@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios de JavaScript e DOM</title>
+  <meta name="description" content="Oito mini-aplicações em HTML e JavaScript puro que manipulam o DOM.">
+  <style>
+    body {
+      background-color: #608d6b;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 16px;
+      color: #F8F0E3;
+    }
+    header, main, footer { max-width: 720px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; }
+    header p { margin: 0 0 24px; }
+    ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    a.cartao {
+      display: block;
+      background-color: #F8F0E3;
+      color: #2b3a30;
+      border-radius: 10px;
+      padding: 16px 20px;
+      text-decoration: none;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    a.cartao:hover, a.cartao:focus-visible { outline: 3px solid #2b3a30; }
+    a.cartao strong { display: block; font-size: 1.05rem; }
+    a.cartao span { font-size: 0.92rem; color: #4a5c50; }
+    footer { margin-top: 28px; font-style: italic; }
+    footer a { color: inherit; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exercícios de JavaScript e DOM</h1>
+    <p>Oito mini-aplicações em HTML e JavaScript puro, sem bibliotecas. Clique para abrir.</p>
+  </header>
+
+  <main>
+    <ul>
+      <li><a class="cartao" href="contador/contador.html"><strong>Contador de cliques</strong><span>Conta os cliques do botão e permite zerar.</span></a></li>
+      <li><a class="cartao" href="tabuada/tabuada.html"><strong>Tabuada</strong><span>Gera a tabuada de um número.</span></a></li>
+      <li><a class="cartao" href="tema/tema.html"><strong>Modo claro/escuro</strong><span>Alterna o tema da página.</span></a></li>
+      <li><a class="cartao" href="destacar/destacar.html"><strong>Destacar</strong><span>Destaca na lista o nome digitado, quando é idêntico.</span></a></li>
+      <li><a class="cartao" href="filtrar/filtrar.html"><strong>Filtrar</strong><span>Filtra a lista de nomes enquanto você digita.</span></a></li>
+      <li><a class="cartao" href="presenca/presenca.html"><strong>Confirme sua presença</strong><span>Lista de nomes com caixas de seleção.</span></a></li>
+      <li><a class="cartao" href="multas/index.html"><strong>Sistema de multas</strong><span>Informa se a velocidade digitada gera multa (a partir de 100 km/h).</span></a></li>
+      <li><a class="cartao" href="verificadorIdade/verificadorIdade.html"><strong>Verificador de idade</strong><span>Identifica a faixa etária pelo ano de nascimento e mostra uma imagem correspondente.</span></a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; Emanuelly Maciel · <a href="https://github.com/oimanum/emanuelly-maciel-lista02">código no GitHub</a></p>
+  </footer>
+</body>
+</html>
