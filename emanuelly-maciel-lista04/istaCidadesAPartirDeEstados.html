@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listaCidadesAPartirDeEstados</title>
+</head>
+<body>
+
+    <h2>listaCidadesAPartirDeEstados</h2>
+
+    <label>Estado:</label>
+    <select id="estado"></select>
+
+    <br><br>
+
+    <label>Cidade:</label>
+    <select id="cidade"></select>
+
+    <p id="resultado"></p>
+
+    <script>
+        const estado = document.getElementById("estado");
+        const cidade = document.getElementById("cidade");
+        const resultado = document.getElementById("resultado");
+
+        async function carregarCidades() {
+            const dados = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado.value}/municipios`).then(r => r.json());
+
+            cidade.innerHTML = dados.map(c => `<option>${c.nome}</option>`).join("");
+            mostrar();
+        }
+
+        function mostrar() {
+            resultado.textContent = `Você selecionou: ${cidade.value} - ${estado.selectedOptions[0].text}`;
+        }
+
+        cidade.onchange = mostrar;
+        estado.onchange = carregarCidades;
+
+        fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
+            .then(r => r.json())
+            .then(dados => {
+                estado.innerHTML = dados.map(e => `<option value="${e.sigla}">${e.nome}</option>`).join("");
+                carregarCidades();
+            });
+    </script>
+
+</body>
+</html>
